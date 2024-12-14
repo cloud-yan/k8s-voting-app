@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rollout-demo
+  labels:
+    type: webserver
+spec:
+  selector:
+    matchLabels:
+      app: nginx-app
+  template:
+    metadata:
+      name: ngnix-pod
+      labels:
+        app: nginx-app
+    spec:
+      containers:
+        - name: nginxc
+          image: nginx:1.27.3-perl
+  replicas: 3

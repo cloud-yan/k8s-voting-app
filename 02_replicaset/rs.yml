@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rc-demo-webapp
+  # replicaset label
+  labels:
+    type: demo-rc
+    env: staging
+spec:
+  template:
+    metadata:
+      name: redis-box
+      # pod label
+      labels:
+        type: caching-demo
+    spec:
+      containers:
+      - name: redis
+        image: redis
+  selector:
+    # In selector, need to use pod label not label of rs.
+    matchLabels:
+      type: caching-demo
+  replicas: 6

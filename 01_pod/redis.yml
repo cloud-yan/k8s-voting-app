@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-box
+  labels:
+      type: caching-demo
+spec:
+  containers:
+    - name: redis-pod
+      image: redis
