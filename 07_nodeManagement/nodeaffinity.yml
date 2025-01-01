@@ -15,17 +15,17 @@ spec:
       requests:
         memory: "64Mi"
         cpu: "250m"
-tolerations:
-  - key: "spray"
-    operator: "Equal"
-    value: "mortein"
-    effect: "NoSchedule"
-affinity:
-  nodeAffinity:
-    requiredDuringSchedulingIgnoredDuringExecution:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: "insect"
-          operator: "In"
-          values:
-          - "mosquito"
+  tolerations:
+    - key: "spray"
+      operator: "Equal"
+      value: "mortein"
+      effect: "NoSchedule"
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: "insect"
+            operator: "In"
+            values:
+            - "mosquito"
